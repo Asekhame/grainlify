@@ -11,15 +11,8 @@ name: "Build Reproducibility — cdylib wasm artifacts"
 #   4. contracts/program-escrow/target/wasm32-unknown-unknown/release/program_escrow.wasm
 #   5. contracts/view-facade/target/wasm32-unknown-unknown/release/view_facade.wasm
 #   6. contracts/escrow-view-facade/target/wasm32-unknown-unknown/release/escrow_view_facade.wasm
-#   7. soroban/target/wasm32-unknown-unknown/release/escrow.wasm            [SUPERSEDED — hashed for reproducibility only, not deployable]
-#   8. soroban/target/wasm32-unknown-unknown/release/program_escrow.wasm     [SUPERSEDED — hashed for reproducibility only, not deployable]
-#
-#   Items 7-8 come from the soroban/ workspace, whose `escrow` and
-#   `program-escrow` crates are both superseded. They are still built and hashed
-#   here so that a regression in either crate is caught, but they are NOT part of
-#   the deployable inventory — see DEPLOYABLE_ARTIFACTS.md ("Not deployable"),
-#   docs/contracts/escrow-implementation-authority.md, and
-#   docs/contracts/program-escrow-implementation-authority.md.
+#   7. soroban/target/wasm32-unknown-unknown/release/escrow.wasm
+#   8. soroban/target/wasm32-unknown-unknown/release/program_escrow.wasm
 #
 #   contracts/bounty_escrow workspace (bounty_escrow/Cargo.toml)
 #     • bounty_escrow.wasm          — main bounty escrow contract
@@ -44,9 +37,6 @@ name: "Build Reproducibility — cdylib wasm artifacts"
 #     • escrow                      — soroban/contracts/escrow is SUPERSEDED
 #                                     (reference/parity only, never deployed);
 #                                     see docs/contracts/escrow-implementation-authority.md
-#     • soroban-program-escrow      — soroban/contracts/program-escrow is
-#                                     SUPERSEDED (reference only, never deployed);
-#                                     see docs/contracts/program-escrow-implementation-authority.md
 #     • grainlify_stream            — no crate-type; testutils-only, host side
 #     • grainlify_contracts         — [[bin]] + rlib, not cdylib
 # Excluded (host-only helpers / no cdylib):
