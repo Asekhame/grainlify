@@ -23,8 +23,6 @@
 extern crate std;
 use std::string::ToString;
 
-use std::string::ToString;
-
 use crate::event_payload_fixtures::{
     EventPayloadFixture, EVENT_ENUM_FIXTURES, EVENT_PAYLOAD_FIXTURES, FIXTURE_EVENT_VERSION,
 };
